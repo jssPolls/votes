@@ -23,7 +23,7 @@ var Character = require('./models/character');
 
 var app = express();
 
-mongoose.connect(config.database);
+mongoose.connect('mongodb://kshit_9:Kshitij.9@ds141209.mlab.com:41209/jsspeople');
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
 });
