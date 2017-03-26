@@ -22,15 +22,15 @@ var routes = require('./app/routes');
 var Character = require('./models/character');
 
 var app = express();
-var appConnection = mongoose.createConnection('mongodb://kshit_9:Kshitij.9@ds141209.mlab.com:41209/jsspeople');
-appConnection.on('error', console.error.bind(console, 'connection error:'));
-appConnection.once('open', function callback () {
-    console.log("h");
-});
-// mongoose.connect('mongodb://kshit_9:Kshitij.9@ds141209.mlab.com:41209/jsspeople');
-// mongoose.connection.on('error', function() {
-//   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
+// var appConnection = mongoose.createConnection('mongodb://kshit_9:Kshitij.9@ds141209.mlab.com:41209/jsspeople');
+// appConnection.on('error', console.error.bind(console, 'connection error:'));
+// appConnection.once('open', function callback () {
+//     console.log("h");
 // });
+mongoose.connect('mongodb://kshit_9:Kshitij.9@ds141209.mlab.com:41209/jsspeople');
+mongoose.connection.on('error', function() {
+  console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
+});
 
 app.set('port', process.env.PORT || 3000);
 app.use(compression());
