@@ -27,7 +27,7 @@ var app = express();
 // appConnection.once('open', function callback () {
 //     console.log("h");
 // });
-mongoose.connect('mongodb://kshit_9:Kshitij.9@ds141209.mlab.com:41209/jsspeople');
+mongoose.connect('./config');
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
 });
